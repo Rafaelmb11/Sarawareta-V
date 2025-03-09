@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4wjxsowa8xr7"]
+
+[ext_resource type="Script" path="res://Scripts/problem_warning.gd" id="1_6aflr"]
+[ext_resource type="FontFile" uid="uid://617io3wrmuth" path="res://Fonts/UDDIGIKYOKASHON-B.TTC" id="2_qtgpa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i1ic"]
+bg_color = Color(0, 0, 0, 0.235294)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 4.0
+expand_margin_top = 8.0
+expand_margin_right = 4.0
+expand_margin_bottom = 8.0
+
+[node name="ProblemWarning" type="Node2D"]
+script = ExtResource("1_6aflr")
+
+[node name="Label1" type="Label" parent="."]
+offset_left = 1384.0
+offset_top = 1094.0
+offset_right = 1798.0
+offset_bottom = 1148.0
+theme_override_colors/font_color = Color(0.835294, 0.184314, 0.12549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_qtgpa")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i1ic")
+text = "Inventory is full!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1384.0
+offset_top = 1094.0
+offset_right = 1798.0
+offset_bottom = 1148.0
+theme_override_colors/font_color = Color(0.835294, 0.184314, 0.12549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_qtgpa")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i1ic")
+text = "Inventory is full!"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1384.0
+offset_top = 1094.0
+offset_right = 1798.0
+offset_bottom = 1148.0
+theme_override_colors/font_color = Color(0.835294, 0.184314, 0.12549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_qtgpa")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i1ic")
+text = "Inventory is full!"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 1384.0
+offset_top = 1094.0
+offset_right = 1798.0
+offset_bottom = 1148.0
+theme_override_colors/font_color = Color(0.835294, 0.184314, 0.12549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_qtgpa")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i1ic")
+text = "Inventory is full!"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 1384.0
+offset_top = 1094.0
+offset_right = 1798.0
+offset_bottom = 1148.0
+theme_override_colors/font_color = Color(0.835294, 0.184314, 0.12549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_qtgpa")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i1ic")
+text = "Inventory is full!"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 1384.0
+offset_top = 1094.0
+offset_right = 1798.0
+offset_bottom = 1148.0
+theme_override_colors/font_color = Color(0.835294, 0.184314, 0.12549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_qtgpa")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i1ic")
+text = "Inventory is full!"

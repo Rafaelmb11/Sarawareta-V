@@ -1,0 +1,604 @@
+[gd_scene load_steps=26 format=3 uid="uid://qigbdec2kbaq"]
+
+[ext_resource type="Script" path="res://Scripts/config.gd" id="1_2jomj"]
+[ext_resource type="Texture2D" uid="uid://cll77m5nca103" path="res://UI/Backgrounds/ShinyBackground.jpg" id="2_kssxv"]
+[ext_resource type="Texture2D" uid="uid://chs4ocjq7tc2e" path="res://UI/golden_grabber.jpg" id="3_m2jyj"]
+[ext_resource type="Texture2D" uid="uid://b4xnl53on7xn3" path="res://UI/SliderBox.png" id="4_1kwne"]
+[ext_resource type="FontFile" uid="uid://617io3wrmuth" path="res://Fonts/UDDIGIKYOKASHON-B.TTC" id="5_j0w2d"]
+[ext_resource type="Texture2D" uid="uid://d0oswdgdfvskb" path="res://UI/Checkmark_Checked.png" id="6_7qrmb"]
+[ext_resource type="Texture2D" uid="uid://bnpaetxa4kirs" path="res://UI/GeneralBox.png" id="6_sc8ds"]
+[ext_resource type="Texture2D" uid="uid://if2ijvxigm0g" path="res://UI/Checkmark_Unchecked.png" id="7_vgchc"]
+[ext_resource type="Texture2D" uid="uid://dvd2oav1ger08" path="res://UI/SquareBox.png" id="9_8in5i"]
+[ext_resource type="Script" path="res://Scripts/textbox.gd" id="11_lowwg"]
+[ext_resource type="Texture2D" uid="uid://cdv6ebb08j0lk" path="res://UI/Textboxes/FramelessTextbox.png" id="12_jqmly"]
+[ext_resource type="Texture2D" uid="uid://ngvk8l5euiej" path="res://UI/Backgrounds/Toilet.jpg" id="14_1yyhr"]
+[ext_resource type="Texture2D" uid="uid://dhhb0jrifmycj" path="res://UI/BackButton.png" id="15_stn4r"]
+[ext_resource type="Texture2D" uid="uid://rkp3v6ia43cg" path="res://UI/BackButtonHover.png" id="16_np0ac"]
+[ext_resource type="Texture2D" uid="uid://b282tvrpyj2ov" path="res://UI/TitleButton.png" id="17_8wifk"]
+[ext_resource type="Texture2D" uid="uid://ckdur2cxgyc4v" path="res://UI/TitleButtonHover.png" id="18_i1m3q"]
+[ext_resource type="Texture2D" uid="uid://cfitfhp8qb5ut" path="res://UI/ExitButton.png" id="19_d15fj"]
+[ext_resource type="Texture2D" uid="uid://bbjaqmsiww8q8" path="res://UI/ExitButtonHover.png" id="20_gr1i0"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_3t2pm"]
+color = Color(0, 0.486275, 0.486275, 1)
+grow_end = 0.0
+thickness = 22
+
+[sub_resource type="Gradient" id="Gradient_ddc7o"]
+colors = PackedColorArray(0, 0, 0, 1, 0.4, 0.776471, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y4hoa"]
+gradient = SubResource("Gradient_ddc7o")
+fill_from = Vector2(0, 0.606061)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6bsw7"]
+texture = SubResource("GradientTexture2D_y4hoa")
+modulate_color = Color(0.47451, 0.764706, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_b2doe"]
+colors = PackedColorArray(0, 0, 0, 1, 0.980392, 0.792157, 0.32549, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cyxm8"]
+gradient = SubResource("Gradient_b2doe")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.833333, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgfr2"]
+texture = SubResource("GradientTexture2D_cyxm8")
+modulate_color = Color(0.4, 0.776471, 1, 1)
+
+[node name="Config" type="CanvasLayer"]
+script = ExtResource("1_2jomj")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_kssxv")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 63.0
+offset_right = 248.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 72
+text = "Config"
+
+[node name="MasterVolume" type="HSlider" parent="."]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 319.0
+offset_bottom = 298.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+theme_override_icons/grabber = ExtResource("3_m2jyj")
+theme_override_icons/grabber_highlight = ExtResource("3_m2jyj")
+theme_override_icons/grabber_disabled = ExtResource("3_m2jyj")
+theme_override_styles/slider = SubResource("StyleBoxLine_3t2pm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_6bsw7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_lgfr2")
+rounded = true
+scrollable = false
+
+[node name="Box" type="Sprite2D" parent="MasterVolume"]
+position = Vector2(150, 16.6667)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_1kwne")
+
+[node name="Text" type="Label" parent="MasterVolume"]
+layout_mode = 0
+offset_left = -3.33333
+offset_top = -10.0
+offset_right = 112.667
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="Ratio" type="Label" parent="MasterVolume"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 12.0
+offset_right = 319.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 24
+text = "000"
+
+[node name="BGMVolume" type="HSlider" parent="."]
+offset_left = 50.0
+offset_top = 400.0
+offset_right = 319.0
+offset_bottom = 448.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+theme_override_icons/grabber = ExtResource("3_m2jyj")
+theme_override_icons/grabber_highlight = ExtResource("3_m2jyj")
+theme_override_icons/grabber_disabled = ExtResource("3_m2jyj")
+theme_override_styles/slider = SubResource("StyleBoxLine_3t2pm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_6bsw7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_lgfr2")
+rounded = true
+scrollable = false
+
+[node name="Box" type="Sprite2D" parent="BGMVolume"]
+position = Vector2(150, 16.6667)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_1kwne")
+
+[node name="Text" type="Label" parent="BGMVolume"]
+layout_mode = 0
+offset_left = -3.33333
+offset_top = -10.0
+offset_right = 112.667
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 20
+text = "BGM Volume"
+
+[node name="Ratio" type="Label" parent="BGMVolume"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 12.0
+offset_right = 319.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 24
+text = "000"
+
+[node name="SFXVolume" type="HSlider" parent="."]
+offset_left = 50.0
+offset_top = 550.0
+offset_right = 319.0
+offset_bottom = 598.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+theme_override_icons/grabber = ExtResource("3_m2jyj")
+theme_override_icons/grabber_highlight = ExtResource("3_m2jyj")
+theme_override_icons/grabber_disabled = ExtResource("3_m2jyj")
+theme_override_styles/slider = SubResource("StyleBoxLine_3t2pm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_6bsw7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_lgfr2")
+rounded = true
+scrollable = false
+
+[node name="Box" type="Sprite2D" parent="SFXVolume"]
+position = Vector2(150, 16.6667)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_1kwne")
+
+[node name="Text" type="Label" parent="SFXVolume"]
+layout_mode = 0
+offset_left = -3.33333
+offset_top = -10.0
+offset_right = 112.667
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="Ratio" type="Label" parent="SFXVolume"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 12.0
+offset_right = 319.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 24
+text = "000"
+
+[node name="SystemSFXVolume" type="HSlider" parent="."]
+offset_left = 50.0
+offset_top = 700.0
+offset_right = 319.0
+offset_bottom = 748.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+theme_override_icons/grabber = ExtResource("3_m2jyj")
+theme_override_icons/grabber_highlight = ExtResource("3_m2jyj")
+theme_override_icons/grabber_disabled = ExtResource("3_m2jyj")
+theme_override_styles/slider = SubResource("StyleBoxLine_3t2pm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_6bsw7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_lgfr2")
+rounded = true
+scrollable = false
+
+[node name="Box" type="Sprite2D" parent="SystemSFXVolume"]
+position = Vector2(150, 16.6667)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_1kwne")
+
+[node name="Text" type="Label" parent="SystemSFXVolume"]
+layout_mode = 0
+offset_left = -3.33333
+offset_top = -10.0
+offset_right = 112.667
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="Ratio" type="Label" parent="SystemSFXVolume"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 12.0
+offset_right = 319.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 24
+text = "000"
+
+[node name="VoiceVolume" type="HSlider" parent="."]
+offset_left = 50.0
+offset_top = 850.0
+offset_right = 319.0
+offset_bottom = 898.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+theme_override_icons/grabber = ExtResource("3_m2jyj")
+theme_override_icons/grabber_highlight = ExtResource("3_m2jyj")
+theme_override_icons/grabber_disabled = ExtResource("3_m2jyj")
+theme_override_styles/slider = SubResource("StyleBoxLine_3t2pm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_6bsw7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_lgfr2")
+rounded = true
+scrollable = false
+
+[node name="Box" type="Sprite2D" parent="VoiceVolume"]
+position = Vector2(150, 16.6667)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_1kwne")
+
+[node name="Text" type="Label" parent="VoiceVolume"]
+layout_mode = 0
+offset_left = -3.33333
+offset_top = -10.0
+offset_right = 112.667
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="Ratio" type="Label" parent="VoiceVolume"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 12.0
+offset_right = 319.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 24
+text = "000"
+
+[node name="TextSpeed" type="HSlider" parent="."]
+offset_left = 600.0
+offset_top = 250.0
+offset_right = 869.0
+offset_bottom = 298.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+theme_override_icons/grabber = ExtResource("3_m2jyj")
+theme_override_icons/grabber_highlight = ExtResource("3_m2jyj")
+theme_override_icons/grabber_disabled = ExtResource("3_m2jyj")
+theme_override_styles/slider = SubResource("StyleBoxLine_3t2pm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_6bsw7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_lgfr2")
+rounded = true
+scrollable = false
+
+[node name="Box" type="Sprite2D" parent="TextSpeed"]
+position = Vector2(150, 16.6667)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_1kwne")
+
+[node name="Text" type="Label" parent="TextSpeed"]
+layout_mode = 0
+offset_left = -3.33333
+offset_top = -10.0
+offset_right = 112.667
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="Ratio" type="Label" parent="TextSpeed"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 12.0
+offset_right = 319.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 24
+text = "000"
+
+[node name="TextboxTransparency" type="HSlider" parent="."]
+offset_left = 600.0
+offset_top = 400.0
+offset_right = 869.0
+offset_bottom = 448.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+theme_override_icons/grabber = ExtResource("3_m2jyj")
+theme_override_icons/grabber_highlight = ExtResource("3_m2jyj")
+theme_override_icons/grabber_disabled = ExtResource("3_m2jyj")
+theme_override_styles/slider = SubResource("StyleBoxLine_3t2pm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_6bsw7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_lgfr2")
+rounded = true
+scrollable = false
+
+[node name="Box" type="Sprite2D" parent="TextboxTransparency"]
+position = Vector2(150, 16.6667)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_1kwne")
+
+[node name="Text" type="Label" parent="TextboxTransparency"]
+layout_mode = 0
+offset_left = -3.33333
+offset_top = -10.0
+offset_right = 112.667
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="Ratio" type="Label" parent="TextboxTransparency"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 12.0
+offset_right = 319.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 24
+text = "000"
+
+[node name="AutoModeSpeed" type="HSlider" parent="."]
+offset_left = 600.0
+offset_top = 550.0
+offset_right = 869.0
+offset_bottom = 598.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_force_pass_scroll_events = false
+theme_override_icons/grabber = ExtResource("3_m2jyj")
+theme_override_icons/grabber_highlight = ExtResource("3_m2jyj")
+theme_override_icons/grabber_disabled = ExtResource("3_m2jyj")
+theme_override_styles/slider = SubResource("StyleBoxLine_3t2pm")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_6bsw7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_lgfr2")
+rounded = true
+scrollable = false
+
+[node name="Box" type="Sprite2D" parent="AutoModeSpeed"]
+position = Vector2(150, 16.6667)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_1kwne")
+
+[node name="Text" type="Label" parent="AutoModeSpeed"]
+layout_mode = 0
+offset_left = -3.33333
+offset_top = -10.0
+offset_right = 112.667
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="Ratio" type="Label" parent="AutoModeSpeed"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 12.0
+offset_right = 319.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 24
+text = "000"
+
+[node name="SkipUnreadText" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 150.0
+offset_right = -1839.0
+offset_bottom = -860.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="SkipUnreadText"]
+position = Vector2(562, 521)
+scale = Vector2(1.34872, 1.35)
+texture = ExtResource("6_sc8ds")
+centered = false
+
+[node name="SkipUnreadText" type="CheckBox" parent="SkipUnreadText"]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 537.0
+offset_right = 1640.0
+offset_bottom = 795.0
+scale = Vector2(0.3, 0.3)
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 100
+theme_override_icons/checked = ExtResource("6_7qrmb")
+theme_override_icons/unchecked = ExtResource("7_vgchc")
+theme_override_icons/checked_disabled = ExtResource("6_7qrmb")
+theme_override_icons/unchecked_disabled = ExtResource("7_vgchc")
+text = "Skip unread text"
+
+[node name="MosaicCensor" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 300.0
+offset_right = -1839.0
+offset_bottom = -710.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MosaicCensor"]
+position = Vector2(562, 521)
+scale = Vector2(1.34872, 1.35)
+texture = ExtResource("6_sc8ds")
+centered = false
+
+[node name="MosaicCensor" type="CheckBox" parent="MosaicCensor"]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 537.0
+offset_right = 1640.0
+offset_bottom = 795.0
+scale = Vector2(0.3, 0.3)
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 100
+theme_override_icons/checked = ExtResource("6_7qrmb")
+theme_override_icons/unchecked = ExtResource("7_vgchc")
+theme_override_icons/checked_disabled = ExtResource("6_7qrmb")
+theme_override_icons/unchecked_disabled = ExtResource("7_vgchc")
+text = "Mosaic censor On/Off"
+
+[node name="TextboxEditorBox" type="Sprite2D" parent="."]
+position = Vector2(1295, 520)
+scale = Vector2(1.38281, 2.37891)
+texture = ExtResource("9_8in5i")
+
+[node name="ColorPicker" type="ColorPicker" parent="."]
+offset_left = 1130.0
+offset_top = 283.0
+offset_right = 1428.0
+offset_bottom = 811.0
+scale = Vector2(1.1, 1.1)
+deferred_mode = true
+presets_visible = false
+
+[node name="TextboxEditor" type="Label" parent="."]
+offset_left = 1153.0
+offset_top = 245.0
+offset_right = 1425.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("5_j0w2d")
+theme_override_font_sizes/font_size = 32
+text = "Textbox Modulator"
+
+[node name="TextboxSample" type="Sprite2D" parent="."]
+position = Vector2(1692, 340)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_1yyhr")
+
+[node name="Textbox" type="CanvasLayer" parent="."]
+offset = Vector2(1500, 232)
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 1500, 232)
+script = ExtResource("11_lowwg")
+
+[node name="TextboxContainer" type="MarginContainer" parent="Textbox"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -380.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Textbox/TextboxContainer"]
+position = Vector2(0, 20)
+texture = ExtResource("12_jqmly")
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Textbox/TextboxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Textbox/TextboxContainer/MarginContainer"]
+layout_direction = 1
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Textbox/TextboxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.0705882, 0, 0.27451, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 38
+autowrap_mode = 2
+
+[node name="Speaker" type="Label" parent="Textbox"]
+offset_left = 12.0
+offset_top = 785.0
+offset_right = 1632.0
+offset_bottom = 822.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.101961, 0, 0.313726, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 42
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Back" type="TextureButton" parent="."]
+offset_left = 1151.0
+offset_top = 876.0
+offset_right = 1401.0
+offset_bottom = 1126.0
+scale = Vector2(0.75, 0.75)
+focus_mode = 0
+texture_normal = ExtResource("15_stn4r")
+texture_pressed = ExtResource("16_np0ac")
+texture_hover = ExtResource("16_np0ac")
+
+[node name="Title" type="TextureButton" parent="."]
+offset_left = 1396.0
+offset_top = 876.0
+offset_right = 1646.0
+offset_bottom = 1126.0
+scale = Vector2(0.75, 0.75)
+focus_mode = 0
+texture_normal = ExtResource("17_8wifk")
+texture_pressed = ExtResource("18_i1m3q")
+texture_hover = ExtResource("18_i1m3q")
+
+[node name="Exit" type="TextureButton" parent="."]
+offset_left = 1661.0
+offset_top = 876.0
+offset_right = 1911.0
+offset_bottom = 1126.0
+scale = Vector2(0.75, 0.75)
+focus_mode = 0
+texture_normal = ExtResource("19_d15fj")
+texture_pressed = ExtResource("20_gr1i0")
+texture_hover = ExtResource("20_gr1i0")
+
+[connection signal="drag_ended" from="MasterVolume" to="." method="_on_master_volume_drag_ended"]
+[connection signal="value_changed" from="MasterVolume" to="." method="_on_master_volume_value_changed"]
+[connection signal="drag_ended" from="BGMVolume" to="." method="_on_bgm_volume_drag_ended"]
+[connection signal="value_changed" from="BGMVolume" to="." method="_on_bgm_volume_value_changed"]
+[connection signal="drag_ended" from="SFXVolume" to="." method="_on_sfx_volume_drag_ended"]
+[connection signal="value_changed" from="SFXVolume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="drag_ended" from="SystemSFXVolume" to="." method="_on_system_sfx_volume_drag_ended"]
+[connection signal="value_changed" from="SystemSFXVolume" to="." method="_on_system_sfx_volume_value_changed"]
+[connection signal="drag_ended" from="VoiceVolume" to="." method="_on_voice_volume_drag_ended"]
+[connection signal="value_changed" from="VoiceVolume" to="." method="_on_voice_volume_value_changed"]
+[connection signal="drag_ended" from="TextSpeed" to="." method="_on_text_speed_drag_ended"]
+[connection signal="value_changed" from="TextSpeed" to="." method="_on_text_speed_value_changed"]
+[connection signal="drag_ended" from="AutoModeSpeed" to="." method="_on_auto_mode_speed_drag_ended"]
+[connection signal="value_changed" from="AutoModeSpeed" to="." method="_on_auto_mode_speed_value_changed"]
+[connection signal="toggled" from="SkipUnreadText/SkipUnreadText" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="MosaicCensor/MosaicCensor" to="." method="_on_mosaic_censor_toggled"]
+[connection signal="color_changed" from="ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Title" to="." method="_on_title_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

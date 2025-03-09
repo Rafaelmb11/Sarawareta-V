@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://mkiywj45ib8n"]
+
+[ext_resource type="Script" path="res://Scripts/char_sprite.gd" id="1_p6vvk"]
+[ext_resource type="Texture2D" uid="uid://ca25470vj4v6w" path="res://Sprites/Characters/Player/BodyParts/hair_back.png" id="2_1iob5"]
+[ext_resource type="Texture2D" uid="uid://ddpeuefcs143y" path="res://Sprites/Characters/Player/BodyParts/body_base.png" id="2_iy2dm"]
+[ext_resource type="Texture2D" uid="uid://bri1cewdtt1p3" path="res://Sprites/Characters/Player/PreRenderedBody/pre_rendered_body_pajama.png" id="3_5hywh"]
+[ext_resource type="Texture2D" uid="uid://beccxn2ei73dm" path="res://Sprites/Characters/Player/BodyParts/body_compressed_booba.png" id="4_b1t0i"]
+[ext_resource type="Texture2D" uid="uid://pl5bq7w645hj" path="res://Sprites/Characters/Player/Misc/face_gloom.png" id="4_lm5cb"]
+[ext_resource type="Texture2D" uid="uid://dgor27vp6jwpb" path="res://Sprites/Characters/Player/Outfits/sukumizu_1_v1_navy_blue.png" id="4_nolav"]
+[ext_resource type="Texture2D" uid="uid://dek223jfbkwwy" path="res://Sprites/Characters/Player/BodyParts/hair.png" id="6_d40d7"]
+[ext_resource type="Texture2D" uid="uid://bf46aukylhu47" path="res://Sprites/Characters/Player/Expressions/d_smile.png" id="6_jscwp"]
+
+[node name="CharSprite" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p6vvk")
+
+[node name="HairBack" type="Sprite2D" parent="."]
+texture = ExtResource("2_1iob5")
+centered = false
+
+[node name="BehindBody" type="Sprite2D" parent="."]
+centered = false
+
+[node name="BaseBody" type="Sprite2D" parent="."]
+texture = ExtResource("2_iy2dm")
+centered = false
+
+[node name="Booba" type="Sprite2D" parent="."]
+texture = ExtResource("4_b1t0i")
+centered = false
+
+[node name="Pubic_hair" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Accessory" type="Sprite2D" parent="."]
+centered = false
+
+[node name="OnePieceUnderwear" type="Sprite2D" parent="."]
+texture = ExtResource("4_nolav")
+centered = false
+
+[node name="Bra" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Panty" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Accessory2" type="Sprite2D" parent="."]
+centered = false
+
+[node name="OnePiece" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Top" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Bot" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Accessory3" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Face_gloom" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.627451)
+texture = ExtResource("4_lm5cb")
+centered = false
+
+[node name="Hair" type="Sprite2D" parent="."]
+texture = ExtResource("6_d40d7")
+centered = false
+
+[node name="PreRendered" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_5hywh")
+centered = false
+
+[node name="Blush" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Blush2" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Blush3" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Expression" type="Sprite2D" parent="."]
+texture = ExtResource("6_jscwp")
+centered = false

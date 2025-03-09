@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://crgtq7hafeuo8"]
+
+[ext_resource type="Script" path="res://Scenes/character_renderer.gd" id="1_houkx"]
+[ext_resource type="Texture2D" uid="uid://b47nja0udbkg7" path="res://Sprites/Characters/Player/body_pajama.png" id="1_s3txg"]
+
+[node name="CharacterRenderer" type="CanvasLayer"]
+script = ExtResource("1_houkx")
+
+[node name="Body" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+position = Vector2(418, 1210)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_s3txg")
+region_rect = Rect2(0, 0, 1000, 1000)

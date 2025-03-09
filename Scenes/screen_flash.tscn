@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv88m5wfaygho"]
+
+[ext_resource type="Texture2D" uid="uid://8bm1u4qax558" path="res://Sprites/Misc/Flash.png" id="1_vj8g0"]
+[ext_resource type="Script" path="res://Scripts/Cooming.gd" id="2_igom1"]
+
+[node name="ScreenEffects" type="Node2D"]
+
+[node name="Cooming" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("1_vj8g0")
+centered = false
+script = ExtResource("2_igom1")

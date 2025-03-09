@@ -1,0 +1,1384 @@
+[gd_scene load_steps=53 format=3 uid="uid://q7bh5h23vlml"]
+
+[ext_resource type="Script" path="res://Scripts/panel_mode.gd" id="1_gbddj"]
+[ext_resource type="Texture2D" uid="uid://dl76g0c5xhg6h" path="res://Sprites/Backgrounds/screenshot_2024-11-12T195911.png" id="2_g3jcx"]
+[ext_resource type="Texture2D" uid="uid://ds8nh2rpa515d" path="res://Sprites/TouchScreenComponents/BaseChatBox.png" id="2_x0iqf"]
+[ext_resource type="FontFile" uid="uid://bpcyw66g08ux1" path="res://Fonts/Hiragino Kaku Gothic Pro W3.otf" id="3_3bt14"]
+[ext_resource type="PackedScene" uid="uid://mkiywj45ib8n" path="res://Scenes/char_sprite.tscn" id="3_q5dt4"]
+[ext_resource type="PackedScene" uid="uid://dtlql8phk75pg" path="res://Scenes/textbox.tscn" id="4_ivosk"]
+[ext_resource type="FontFile" uid="uid://bd22cxbxr71he" path="res://Fonts/Satoshi-Variable.ttf" id="4_nlvr8"]
+[ext_resource type="Texture2D" uid="uid://c1serosw1y4su" path="res://Sprites/TouchScreenComponents/Base.png" id="5_7hldu"]
+[ext_resource type="Texture2D" uid="uid://llkvkdrvpboi" path="res://UI/YouKaiIcon.png" id="7_m0b6u"]
+[ext_resource type="Texture2D" uid="uid://rux1luag8n2p" path="res://UI/NewRequestsBox.png" id="10_0kdat"]
+[ext_resource type="Script" path="res://Scripts/request.gd" id="10_dyk4b"]
+[ext_resource type="Texture2D" uid="uid://ds8wk4pk4ci8u" path="res://UI/RequestsAcceptNormal.png" id="12_gajcx"]
+[ext_resource type="Texture2D" uid="uid://dsr3s16sjp4ly" path="res://UI/RequestsAcceptPressed.png" id="13_s8ok4"]
+[ext_resource type="FontFile" uid="uid://cmnq3we62sewa" path="res://Fonts/BOMBARD_.ttf" id="13_wwqw6"]
+[ext_resource type="Texture2D" uid="uid://cns6gllsv3vjp" path="res://UI/ShopButtonBar.png" id="13_yt5vm"]
+[ext_resource type="Texture2D" uid="uid://d0yqfcq7bbxht" path="res://UI/RequestsAcceptHover.png" id="14_0gh3i"]
+[ext_resource type="Script" path="res://Scripts/shop_buttons.gd" id="14_dtjfg"]
+[ext_resource type="Texture2D" uid="uid://dkg5objmiddc4" path="res://UI/ShopButtonItemsIconNormal.png" id="15_23bhe"]
+[ext_resource type="Texture2D" uid="uid://bnjo70tbybf15" path="res://UI/ShopButtonItemsIconSelected.png" id="16_mcm4f"]
+[ext_resource type="Texture2D" uid="uid://y4nbhalnuh5q" path="res://UI/RequestsDenyNormal.png" id="16_x6n13"]
+[ext_resource type="Texture2D" uid="uid://da78332w0jyex" path="res://UI/ShopButtonItemsIconHover.png" id="17_4rja0"]
+[ext_resource type="Texture2D" uid="uid://ct1tr2gwkhb2v" path="res://UI/ShopButtonAllIconNormal.png" id="17_oahuf"]
+[ext_resource type="Texture2D" uid="uid://cjkm5bv4a88jg" path="res://UI/RequestsDenyPressed.png" id="17_vgmvr"]
+[ext_resource type="Texture2D" uid="uid://u42px823o4ky" path="res://UI/ShopButtonFoodIconNormal.png" id="18_ki8b4"]
+[ext_resource type="Texture2D" uid="uid://77ubdlvhq3vk" path="res://UI/RequestsDenyHover.png" id="18_rmckg"]
+[ext_resource type="Texture2D" uid="uid://c58q0qufp33s2" path="res://UI/ShopButtonAllIconSelected.png" id="18_twe5a"]
+[ext_resource type="Texture2D" uid="uid://bxg0ji5ynweu5" path="res://UI/ShopButtonAllIconHover.png" id="19_0vlmp"]
+[ext_resource type="Texture2D" uid="uid://bf2jdifttnd1m" path="res://UI/ShopButtonFoodIconSelected.png" id="19_7fgbr"]
+[ext_resource type="Texture2D" uid="uid://b40q2wymrycod" path="res://UI/ShopButtonFoodIconHover.png" id="20_c1f0u"]
+[ext_resource type="Texture2D" uid="uid://d3sqkihl76rel" path="res://UI/ShopButtonClothesIconNormal.png" id="21_u30bo"]
+[ext_resource type="Texture2D" uid="uid://cm86xxv7gr0n0" path="res://UI/ShopButtonClothesIconSelected.png" id="22_6xhqv"]
+[ext_resource type="Texture2D" uid="uid://dvr3rvtfwftxi" path="res://UI/ShopButtonClothesIconHover.png" id="23_574g8"]
+[ext_resource type="Texture2D" uid="uid://c4i8ybwlreg73" path="res://UI/ShopButtonPandaIconNormal.png" id="24_ri2w4"]
+[ext_resource type="Texture2D" uid="uid://ba3cvj16nx5jk" path="res://UI/ShopButtonPandaIconSelected.png" id="25_04gh7"]
+[ext_resource type="Texture2D" uid="uid://brutcaqjm40ct" path="res://UI/ShopButtonPandaIconHover.png" id="26_2u8tu"]
+[ext_resource type="Texture2D" uid="uid://c0b63ur1bxkkf" path="res://UI/ItemBoxUpper.png" id="27_ykag7"]
+[ext_resource type="Texture2D" uid="uid://vb2s4u23ng6e" path="res://UI/ItemBoxLower.png" id="28_w6lf4"]
+[ext_resource type="Texture2D" uid="uid://b0r2kopt12jy1" path="res://Icons/Food/Burger.png" id="28_xqrgm"]
+[ext_resource type="FontFile" uid="uid://617io3wrmuth" path="res://Fonts/UDDIGIKYOKASHON-B.TTC" id="29_4bp5m"]
+[ext_resource type="Texture2D" uid="uid://bpbjixqke3enn" path="res://UI/BuyButtonNormal.png" id="31_h5rkr"]
+[ext_resource type="Texture2D" uid="uid://bbh07g3aks6f6" path="res://UI/BuyButtonPressed.png" id="32_lpu3o"]
+[ext_resource type="Texture2D" uid="uid://kvhohnri4wpl" path="res://UI/BuyButtonHover.png" id="33_rpl6g"]
+[ext_resource type="Texture2D" uid="uid://txatvus8i0vx" path="res://Icons/Food/Broccoli.png" id="34_7sq3q"]
+[ext_resource type="Texture2D" uid="uid://8r6q5uvf75u0" path="res://Icons/Food/Butter.png" id="34_gmxrk"]
+[ext_resource type="Texture2D" uid="uid://ca6cawy8c5r5l" path="res://Icons/Food/Bread.png" id="35_1wghx"]
+[ext_resource type="PackedScene" uid="uid://c4wjxsowa8xr7" path="res://Scenes/problem_warning.tscn" id="37_qnvrt"]
+[ext_resource type="Script" path="res://Scripts/shop_item.gd" id="39_l20kf"]
+[ext_resource type="Script" path="res://Scripts/PM_Scenarios.gd" id="40_6gfxe"]
+[ext_resource type="Script" path="res://Scripts/shop_buy_button.gd" id="40_mlmrr"]
+[ext_resource type="PackedScene" uid="uid://dum33jyacf4p1" path="res://arrow.tscn" id="41_p7fvt"]
+[ext_resource type="Texture2D" uid="uid://gdvvjg7au7qm" path="res://Sprites/Backgrounds/clubroom.png" id="51_t2kom"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb2bg"]
+bg_color = Color(0, 0.435294, 0.109804, 0.247059)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.203715, 0.246217, 0.420233, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_right = 2.0
+
+[node name="PanelMode" type="Node2D"]
+process_mode = 3
+process_priority = 1
+script = ExtResource("1_gbddj")
+
+[node name="BlackBackground" type="ColorRect" parent="." groups=["always_visible"]]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.054902, 0.054902, 0.0627451, 1)
+
+[node name="Control" type="Control" parent="." groups=["live_element"]]
+process_mode = 3
+visible = false
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 204.0
+offset_right = 1.0
+offset_bottom = 204.0
+scale = Vector2(0.658, 0.658)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
+process_priority = 1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
+process_mode = 3
+process_priority = 1
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="Background" type="TextureRect" parent="Control/SubViewportContainer/SubViewport"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_g3jcx")
+
+[node name="CharSprite" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("3_q5dt4")]
+process_mode = 3
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.5
+offset_right = -480.0
+grow_horizontal = 2
+centralize = true
+
+[node name="Textbox" parent="Control/SubViewportContainer/SubViewport" instance=ExtResource("4_ivosk")]
+FontSize = 54
+SpeakerFontSize = 56
+
+[node name="BaseChatBox" type="Sprite2D" parent="." groups=["live_element"]]
+visible = false
+texture = ExtResource("2_x0iqf")
+centered = false
+
+[node name="ChatControl" type="Control" parent="." groups=["live_element"]]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1276.0
+offset_top = 218.0
+offset_right = 1276.0
+offset_bottom = 218.0
+
+[node name="Chat" type="VBoxContainer" parent="ChatControl"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+offset_top = -6.0
+offset_right = 690.0
+offset_bottom = 850.0
+grow_vertical = 0
+
+[node name="s10" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s10"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="s9" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s9"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="s8" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s8"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="s7" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s7"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="s6" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s6"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="s5" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s5"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="s4" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s4"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="s3" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s3"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="s2" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s2"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="s1" type="MarginContainer" parent="ChatControl/Chat"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChatControl/Chat/s1"]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_3bt14")
+theme_override_fonts/bold_font = ExtResource("4_nlvr8")
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+
+[node name="Base" type="Sprite2D" parent="." groups=["live_element"]]
+visible = false
+position = Vector2(1, 0)
+texture = ExtResource("5_7hldu")
+centered = false
+
+[node name="YouKaiIcon" type="Sprite2D" parent="." groups=["always_visible"]]
+position = Vector2(-36, -23)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_m0b6u")
+centered = false
+
+[node name="NavyButtons" type="Control" parent="." groups=["always_visible"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -36.0
+offset_top = 2.0
+offset_right = 4.0
+offset_bottom = 42.0
+scale = Vector2(1.2, 1.2)
+
+[node name="Live" type="Button" parent="NavyButtons" groups=["always_visible"]]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 43.0
+offset_right = 272.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("4_nlvr8")
+theme_override_font_sizes/font_size = 42
+text = "Live"
+flat = true
+
+[node name="Requests" type="Button" parent="NavyButtons" groups=["always_visible"]]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 43.0
+offset_right = 493.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("4_nlvr8")
+theme_override_font_sizes/font_size = 42
+text = "Requests"
+flat = true
+
+[node name="Shop" type="Button" parent="NavyButtons" groups=["always_visible"]]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 43.0
+offset_right = 649.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("4_nlvr8")
+theme_override_font_sizes/font_size = 42
+text = "Shop"
+flat = true
+
+[node name="Money" type="Label" parent="." groups=["always_visible"]]
+offset_left = 1586.0
+offset_top = 58.0
+offset_right = 1819.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0, 0.701961, 0, 1)
+theme_override_fonts/font = ExtResource("4_nlvr8")
+theme_override_font_sizes/font_size = 54
+text = "10000円"
+
+[node name="LiveTitle" type="Label" parent="." groups=["live_element"]]
+offset_left = 64.0
+offset_top = 953.0
+offset_right = 160.0
+offset_bottom = 1000.0
+theme_override_fonts/font = ExtResource("3_3bt14")
+theme_override_font_sizes/font_size = 46
+text = "Text"
+
+[node name="RandomChatDelay" type="Timer" parent="."]
+autostart = true
+
+[node name="RequestListScrollable" type="ScrollContainer" parent="." groups=["requests_element"]]
+visible = false
+offset_left = 145.0
+offset_top = 243.0
+offset_right = 1790.0
+offset_bottom = 1020.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="RequestListScrollable"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="Request" type="MarginContainer" parent="RequestListScrollable/GridContainer"]
+custom_minimum_size = Vector2(520, 680)
+layout_direction = 2
+layout_mode = 2
+localize_numeral_system = false
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("10_dyk4b")
+
+[node name="RequestBoxBase_0" type="Control" parent="RequestListScrollable/GridContainer/Request"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 481.0
+offset_bottom = 641.0
+texture = ExtResource("10_0kdat")
+stretch_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 295.0
+offset_right = 447.0
+offset_bottom = 505.0
+horizontal_scroll_mode = 0
+
+[node name="Message" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0/ScrollContainer"]
+custom_minimum_size = Vector2(410, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 25
+text = "Message"
+autowrap_mode = 3
+
+[node name="Title" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 36.0
+offset_top = 22.0
+offset_right = 491.0
+offset_bottom = 58.0
+scale = Vector2(0.93, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 26
+text = "Title"
+
+[node name="Sender" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+clip_contents = true
+layout_mode = 2
+offset_left = 146.0
+offset_top = 80.0
+offset_right = 473.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.577008, 0.577008, 0.577008, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+
+[node name="Sender2" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 46.0
+offset_top = 80.0
+offset_right = 454.0
+offset_bottom = 116.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+text = "Sender:"
+
+[node name="Reward" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 148.0
+offset_top = 126.0
+offset_right = 476.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0.134466, 0.52263, 0.999959, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+clip_text = true
+
+[node name="Reward2" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 46.0
+offset_top = 126.0
+offset_right = 454.0
+offset_bottom = 162.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+text = "Reward:"
+
+[node name="Deadline" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 46.0
+offset_top = 171.0
+offset_right = 454.0
+offset_bottom = 207.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+text = "Deadline:"
+
+[node name="Deadline2" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 160.0
+offset_top = 171.0
+offset_right = 477.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.915636, 0.230559, 0.261815, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+clip_text = true
+
+[node name="Requirements" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+custom_minimum_size = Vector2(250, 69)
+layout_mode = 2
+offset_left = 226.0
+offset_top = 214.0
+offset_right = 326.0
+offset_bottom = 279.0
+theme_override_colors/font_color = Color(0.202183, 0.738576, 0.673488, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 2
+
+[node name="Requirements2" type="Label" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 46.0
+offset_top = 214.0
+offset_right = 454.0
+offset_bottom = 250.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+text = "Requirements:"
+
+[node name="AcceptButton" type="TextureButton" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 538.0
+offset_right = 228.0
+offset_bottom = 609.0
+focus_mode = 0
+texture_normal = ExtResource("12_gajcx")
+texture_pressed = ExtResource("13_s8ok4")
+texture_hover = ExtResource("14_0gh3i")
+
+[node name="DenyButton" type="TextureButton" parent="RequestListScrollable/GridContainer/Request/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 538.0
+offset_right = 435.0
+offset_bottom = 608.0
+focus_mode = 0
+texture_normal = ExtResource("16_x6n13")
+texture_pressed = ExtResource("17_vgmvr")
+texture_hover = ExtResource("18_rmckg")
+
+[node name="QuestForFeet1" type="MarginContainer" parent="RequestListScrollable/GridContainer"]
+custom_minimum_size = Vector2(520, 680)
+layout_direction = 2
+layout_mode = 2
+localize_numeral_system = false
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("10_dyk4b")
+title = "Feet is the best part of woman!"
+sender = "LickerOfToes"
+reward = "Black Pantyhose, 200$"
+requirements = "Must be barefoot!"
+message = "SHOW FEET! Wanna see in between your toes, also massage your feet! Shove them in my face! Step on me!!! Please FEET FEET FEET TOES TOES TOES"
+
+[node name="RequestBoxBase_0" type="Control" parent="RequestListScrollable/GridContainer/QuestForFeet1"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 481.0
+offset_bottom = 641.0
+texture = ExtResource("10_0kdat")
+stretch_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 295.0
+offset_right = 447.0
+offset_bottom = 505.0
+horizontal_scroll_mode = 0
+
+[node name="Message" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0/ScrollContainer"]
+custom_minimum_size = Vector2(410, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 25
+text = "Message"
+autowrap_mode = 3
+
+[node name="Title" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 2
+offset_left = 36.0
+offset_top = 22.0
+offset_right = 491.0
+offset_bottom = 58.0
+scale = Vector2(0.93, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 26
+text = "Title"
+
+[node name="AcceptButton" type="TextureButton" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 538.0
+offset_right = 228.0
+offset_bottom = 609.0
+focus_mode = 0
+texture_normal = ExtResource("12_gajcx")
+texture_pressed = ExtResource("13_s8ok4")
+texture_hover = ExtResource("14_0gh3i")
+
+[node name="DenyButton" type="TextureButton" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 538.0
+offset_right = 435.0
+offset_bottom = 608.0
+focus_mode = 0
+texture_normal = ExtResource("16_x6n13")
+texture_pressed = ExtResource("17_vgmvr")
+texture_hover = ExtResource("18_rmckg")
+
+[node name="Sender" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+clip_contents = true
+layout_mode = 0
+offset_left = 146.0
+offset_top = 80.0
+offset_right = 473.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.577008, 0.577008, 0.577008, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+
+[node name="Sender2" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 80.0
+offset_right = 454.0
+offset_bottom = 116.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+text = "Sender:"
+
+[node name="Reward" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 126.0
+offset_right = 476.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0.134466, 0.52263, 0.999959, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+clip_text = true
+
+[node name="Reward2" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 126.0
+offset_right = 454.0
+offset_bottom = 162.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+text = "Reward:"
+
+[node name="Deadline" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 171.0
+offset_right = 454.0
+offset_bottom = 207.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+text = "Deadline:"
+
+[node name="Deadline2" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 171.0
+offset_right = 477.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.915636, 0.230559, 0.261815, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+clip_text = true
+
+[node name="Requirements" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+custom_minimum_size = Vector2(250, 69)
+layout_mode = 0
+offset_left = 226.0
+offset_top = 214.0
+offset_right = 326.0
+offset_bottom = 279.0
+theme_override_colors/font_color = Color(0.202183, 0.738576, 0.673488, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 2
+
+[node name="Requirements2" type="Label" parent="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 214.0
+offset_right = 454.0
+offset_bottom = 250.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("13_wwqw6")
+theme_override_font_sizes/font_size = 30
+text = "Requirements:"
+
+[node name="Bar" type="TextureRect" parent="." groups=["shop_element"]]
+offset_top = 141.0
+offset_right = 1920.0
+offset_bottom = 329.0
+scale = Vector2(1, 0.92)
+texture = ExtResource("13_yt5vm")
+
+[node name="ShopButtons" type="Control" parent="." groups=["shop_element"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 487.0
+offset_top = 1.0
+offset_right = 527.0
+offset_bottom = 41.0
+scale = Vector2(0.8, 0.8)
+script = ExtResource("14_dtjfg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopButtons"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 192.5
+offset_right = 1205.0
+offset_bottom = 338.5
+theme_override_constants/separation = 125
+
+[node name="All" type="TextureButton" parent="ShopButtons/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("17_oahuf")
+texture_pressed = ExtResource("18_twe5a")
+texture_hover = ExtResource("19_0vlmp")
+
+[node name="Items" type="TextureButton" parent="ShopButtons/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("15_23bhe")
+texture_pressed = ExtResource("16_mcm4f")
+texture_hover = ExtResource("17_4rja0")
+
+[node name="Food" type="TextureButton" parent="ShopButtons/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("18_ki8b4")
+texture_pressed = ExtResource("19_7fgbr")
+texture_hover = ExtResource("20_c1f0u")
+
+[node name="Clothes" type="TextureButton" parent="ShopButtons/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("21_u30bo")
+texture_pressed = ExtResource("22_6xhqv")
+texture_hover = ExtResource("23_574g8")
+
+[node name="MadeInChina" type="TextureButton" parent="ShopButtons/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("24_ri2w4")
+texture_pressed = ExtResource("25_04gh7")
+texture_hover = ExtResource("26_2u8tu")
+
+[node name="Items" type="Label" parent="ShopButtons"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 335.0
+offset_right = 424.0
+offset_bottom = 374.0
+theme_override_colors/font_shadow_color = Color(0.368627, 0, 0.427451, 0.486275)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("4_nlvr8")
+theme_override_font_sizes/font_size = 30
+text = "Items"
+
+[node name="Food" type="Label" parent="ShopButtons"]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 335.0
+offset_right = 699.0
+offset_bottom = 374.0
+theme_override_colors/font_shadow_color = Color(0.368627, 0, 0.427451, 0.486275)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("4_nlvr8")
+theme_override_font_sizes/font_size = 30
+text = "Food"
+
+[node name="Clothes" type="Label" parent="ShopButtons"]
+layout_mode = 0
+offset_left = 801.25
+offset_top = 335.0
+offset_right = 1012.25
+offset_bottom = 374.0
+theme_override_colors/font_shadow_color = Color(0.368627, 0, 0.427451, 0.486275)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("4_nlvr8")
+theme_override_font_sizes/font_size = 30
+text = "Clothes"
+
+[node name="Panda" type="Label" parent="ShopButtons"]
+layout_mode = 0
+offset_left = 1032.5
+offset_top = 335.0
+offset_right = 1241.5
+offset_bottom = 374.0
+theme_override_colors/font_shadow_color = Color(0.368627, 0, 0.427451, 0.486275)
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("4_nlvr8")
+theme_override_font_sizes/font_size = 30
+text = "Made In China"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." groups=["shop_element"]]
+custom_minimum_size = Vector2(1920, 0)
+offset_top = 308.0
+offset_right = 1920.0
+offset_bottom = 1057.0
+horizontal_scroll_mode = 0
+
+[node name="ShopItemsListing" type="GridContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(1900, 1)
+layout_mode = 2
+theme_override_constants/h_separation = 370
+theme_override_constants/v_separation = 60
+columns = 3
+
+[node name="ShopItemMargin" type="MarginContainer" parent="ScrollContainer/ShopItemsListing"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 600
+
+[node name="ShopItem" type="Control" parent="ScrollContainer/ShopItemsListing/ShopItemMargin"]
+layout_mode = 2
+
+[node name="Lower" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/ShopItemMargin/ShopItem"]
+texture = ExtResource("28_w6lf4")
+centered = false
+
+[node name="ItemPreview" type="TextureRect" parent="ScrollContainer/ShopItemsListing/ShopItemMargin/ShopItem"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 78.0
+offset_right = 1052.0
+offset_bottom = 1102.0
+scale = Vector2(0.31, 0.3)
+texture = ExtResource("28_xqrgm")
+
+[node name="Upper" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/ShopItemMargin/ShopItem"]
+texture = ExtResource("27_ykag7")
+centered = false
+
+[node name="Title" type="Label" parent="ScrollContainer/ShopItemsListing/ShopItemMargin/ShopItem"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 31.0
+offset_right = 331.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 30
+text = "Cheeseburger"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="ScrollContainer/ShopItemsListing/ShopItemMargin/ShopItem"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 399.0
+offset_right = 333.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 22
+text = "A classic favourite for every fat fuck out there!"
+autowrap_mode = 2
+
+[node name="Price" type="Label" parent="ScrollContainer/ShopItemsListing/ShopItemMargin/ShopItem"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 116.0
+offset_top = 329.0
+offset_right = 256.0
+offset_bottom = 370.0
+pivot_offset = Vector2(43, 0)
+theme_override_colors/font_color = Color(0, 0.91, 0.273, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.156863, 0, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("3_3bt14")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_fb2bg")
+text = "$225"
+horizontal_alignment = 1
+
+[node name="Buy" type="TextureButton" parent="ScrollContainer/ShopItemsListing/ShopItemMargin/ShopItem"]
+layout_mode = 0
+offset_top = 550.0
+offset_right = 370.0
+offset_bottom = 606.0
+texture_normal = ExtResource("31_h5rkr")
+texture_pressed = ExtResource("32_lpu3o")
+texture_hover = ExtResource("33_rpl6g")
+
+[node name="Burger" type="MarginContainer" parent="ScrollContainer/ShopItemsListing" groups=["all_items", "food"]]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 600
+script = ExtResource("39_l20kf")
+Title = "Burger"
+ItemPreview = ExtResource("28_xqrgm")
+Price = 400
+Description = "A classic favourite for every fat fuck out there!"
+
+[node name="ShopItem" type="Control" parent="ScrollContainer/ShopItemsListing/Burger"]
+layout_mode = 2
+
+[node name="Lower" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/Burger/ShopItem"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("28_w6lf4")
+centered = false
+
+[node name="ItemPreview" type="TextureRect" parent="ScrollContainer/ShopItemsListing/Burger/ShopItem"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 93.0
+offset_right = 331.0
+offset_bottom = 380.0
+expand_mode = 2
+
+[node name="Upper" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/Burger/ShopItem"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("27_ykag7")
+centered = false
+
+[node name="Title" type="Label" parent="ScrollContainer/ShopItemsListing/Burger/ShopItem"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 34.0
+offset_right = 331.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="ScrollContainer/ShopItemsListing/Burger/ShopItem"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 408.0
+offset_right = 337.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 2
+
+[node name="Price" type="Label" parent="ScrollContainer/ShopItemsListing/Burger/ShopItem"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 333.0
+offset_right = 255.0
+offset_bottom = 374.0
+pivot_offset = Vector2(43, 0)
+theme_override_colors/font_color = Color(0, 0.91, 0.273, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.156863, 0, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("3_3bt14")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_fb2bg")
+horizontal_alignment = 1
+
+[node name="Buy" type="TextureButton" parent="ScrollContainer/ShopItemsListing/Burger/ShopItem"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 550.0
+offset_right = 369.0
+offset_bottom = 606.0
+texture_normal = ExtResource("31_h5rkr")
+texture_pressed = ExtResource("32_lpu3o")
+texture_hover = ExtResource("33_rpl6g")
+script = ExtResource("40_mlmrr")
+
+[node name="Bread" type="MarginContainer" parent="ScrollContainer/ShopItemsListing" groups=["all_items", "food"]]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 600
+script = ExtResource("39_l20kf")
+Title = "Bread"
+ItemPreview = ExtResource("35_1wghx")
+Price = 250
+Description = "A crunchy delicious mass of sinful carbs."
+
+[node name="ShopItem" type="Control" parent="ScrollContainer/ShopItemsListing/Bread"]
+layout_mode = 2
+
+[node name="Lower" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/Bread/ShopItem"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("28_w6lf4")
+centered = false
+
+[node name="ItemPreview" type="TextureRect" parent="ScrollContainer/ShopItemsListing/Bread/ShopItem"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 93.0
+offset_right = 331.0
+offset_bottom = 380.0
+expand_mode = 2
+
+[node name="Upper" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/Bread/ShopItem"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("27_ykag7")
+centered = false
+
+[node name="Title" type="Label" parent="ScrollContainer/ShopItemsListing/Bread/ShopItem"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 34.0
+offset_right = 331.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="ScrollContainer/ShopItemsListing/Bread/ShopItem"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 408.0
+offset_right = 337.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 2
+
+[node name="Price" type="Label" parent="ScrollContainer/ShopItemsListing/Bread/ShopItem"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 333.0
+offset_right = 255.0
+offset_bottom = 374.0
+pivot_offset = Vector2(43, 0)
+theme_override_colors/font_color = Color(0, 0.91, 0.273, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.156863, 0, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("3_3bt14")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_fb2bg")
+horizontal_alignment = 1
+
+[node name="Buy" type="TextureButton" parent="ScrollContainer/ShopItemsListing/Bread/ShopItem"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 550.0
+offset_right = 369.0
+offset_bottom = 606.0
+texture_normal = ExtResource("31_h5rkr")
+texture_pressed = ExtResource("32_lpu3o")
+texture_hover = ExtResource("33_rpl6g")
+script = ExtResource("40_mlmrr")
+
+[node name="Butter" type="MarginContainer" parent="ScrollContainer/ShopItemsListing" groups=["all_items", "food"]]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 600
+script = ExtResource("39_l20kf")
+Title = "Butter"
+ItemPreview = ExtResource("34_gmxrk")
+Price = 1000
+Description = "Glistening with a layer of guilt, it taunts the arteries with every ounce."
+
+[node name="ShopItem" type="Control" parent="ScrollContainer/ShopItemsListing/Butter"]
+layout_mode = 2
+
+[node name="Lower" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/Butter/ShopItem"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("28_w6lf4")
+centered = false
+
+[node name="ItemPreview" type="TextureRect" parent="ScrollContainer/ShopItemsListing/Butter/ShopItem"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 93.0
+offset_right = 331.0
+offset_bottom = 380.0
+expand_mode = 2
+
+[node name="Upper" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/Butter/ShopItem"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("27_ykag7")
+centered = false
+
+[node name="Title" type="Label" parent="ScrollContainer/ShopItemsListing/Butter/ShopItem"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 34.0
+offset_right = 331.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="ScrollContainer/ShopItemsListing/Butter/ShopItem"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 408.0
+offset_right = 337.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 2
+
+[node name="Price" type="Label" parent="ScrollContainer/ShopItemsListing/Butter/ShopItem"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 333.0
+offset_right = 255.0
+offset_bottom = 374.0
+pivot_offset = Vector2(43, 0)
+theme_override_colors/font_color = Color(0, 0.91, 0.273, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.156863, 0, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("3_3bt14")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_fb2bg")
+horizontal_alignment = 1
+
+[node name="Buy" type="TextureButton" parent="ScrollContainer/ShopItemsListing/Butter/ShopItem"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 550.0
+offset_right = 369.0
+offset_bottom = 606.0
+texture_normal = ExtResource("31_h5rkr")
+texture_pressed = ExtResource("32_lpu3o")
+texture_hover = ExtResource("33_rpl6g")
+script = ExtResource("40_mlmrr")
+
+[node name="Broccoli" type="MarginContainer" parent="ScrollContainer/ShopItemsListing" groups=["all_items", "food"]]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 600
+script = ExtResource("39_l20kf")
+Title = "Broccoli"
+ItemPreview = ExtResource("34_7sq3q")
+Price = 10
+Description = "You can almost hear it cackling, an evil mastermind of the vegetable world"
+
+[node name="ShopItem" type="Control" parent="ScrollContainer/ShopItemsListing/Broccoli"]
+layout_mode = 2
+
+[node name="Lower" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/Broccoli/ShopItem"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("28_w6lf4")
+centered = false
+
+[node name="ItemPreview" type="TextureRect" parent="ScrollContainer/ShopItemsListing/Broccoli/ShopItem"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 93.0
+offset_right = 331.0
+offset_bottom = 380.0
+expand_mode = 2
+
+[node name="Upper" type="Sprite2D" parent="ScrollContainer/ShopItemsListing/Broccoli/ShopItem"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("27_ykag7")
+centered = false
+
+[node name="Title" type="Label" parent="ScrollContainer/ShopItemsListing/Broccoli/ShopItem"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 34.0
+offset_right = 331.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="ScrollContainer/ShopItemsListing/Broccoli/ShopItem"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 408.0
+offset_right = 337.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("29_4bp5m")
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 2
+
+[node name="Price" type="Label" parent="ScrollContainer/ShopItemsListing/Broccoli/ShopItem"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 333.0
+offset_right = 255.0
+offset_bottom = 374.0
+pivot_offset = Vector2(43, 0)
+theme_override_colors/font_color = Color(0, 0.91, 0.273, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.156863, 0, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("3_3bt14")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_fb2bg")
+horizontal_alignment = 1
+
+[node name="Buy" type="TextureButton" parent="ScrollContainer/ShopItemsListing/Broccoli/ShopItem"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 550.0
+offset_right = 369.0
+offset_bottom = 606.0
+texture_normal = ExtResource("31_h5rkr")
+texture_pressed = ExtResource("32_lpu3o")
+texture_hover = ExtResource("33_rpl6g")
+script = ExtResource("40_mlmrr")
+
+[node name="ProblemWarning" parent="ScrollContainer/ShopItemsListing" instance=ExtResource("37_qnvrt")]
+position = Vector2(1519, 790)
+
+[node name="Scenarios" type="Node" parent="."]
+script = ExtResource("40_6gfxe")
+
+[node name="Textbox" parent="." instance=ExtResource("4_ivosk")]
+visible = false
+
+[node name="RedArrow" parent="." instance=ExtResource("41_p7fvt")]
+visible = false
+top_level = true
+position = Vector2(501, 125)
+rotation = 1.5708
+scale = Vector2(0.15, 0.15)
+
+[node name="CG" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1.0
+offset_bottom = 1.0
+texture = ExtResource("51_t2kom")
+
+[node name="CharSprite" parent="CG" instance=ExtResource("3_q5dt4")]
+offset_left = 492.0
+offset_right = 492.0
+
+[connection signal="pressed" from="NavyButtons/Live" to="." method="_on_live_pressed"]
+[connection signal="pressed" from="NavyButtons/Requests" to="." method="_on_requests_pressed"]
+[connection signal="pressed" from="NavyButtons/Shop" to="." method="_on_shop_pressed"]
+[connection signal="timeout" from="RandomChatDelay" to="." method="_on_random_chat_delay_timeout"]
+[connection signal="pressed" from="RequestListScrollable/GridContainer/Request/RequestBoxBase_0/AcceptButton" to="RequestListScrollable/GridContainer/Request" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="RequestListScrollable/GridContainer/Request/RequestBoxBase_0/DenyButton" to="RequestListScrollable/GridContainer/Request" method="_on_deny_button_pressed"]
+[connection signal="pressed" from="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0/AcceptButton" to="RequestListScrollable/GridContainer/QuestForFeet1" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="RequestListScrollable/GridContainer/QuestForFeet1/RequestBoxBase_0/DenyButton" to="RequestListScrollable/GridContainer/QuestForFeet1" method="_on_deny_button_pressed"]
+[connection signal="pressed" from="ShopButtons/HBoxContainer/All" to="ShopButtons" method="_on_all_pressed"]
+[connection signal="pressed" from="ShopButtons/HBoxContainer/Items" to="ShopButtons" method="_on_items_pressed"]
+[connection signal="pressed" from="ShopButtons/HBoxContainer/Food" to="ShopButtons" method="_on_food_pressed"]
+[connection signal="pressed" from="ShopButtons/HBoxContainer/Clothes" to="ShopButtons" method="_on_clothes_pressed"]
+[connection signal="pressed" from="ShopButtons/HBoxContainer/MadeInChina" to="ShopButtons" method="_on_made_in_china_pressed"]
+[connection signal="buy" from="ScrollContainer/ShopItemsListing/Burger/ShopItem/Buy" to="." method="buy_default"]
+[connection signal="pressed" from="ScrollContainer/ShopItemsListing/Burger/ShopItem/Buy" to="ScrollContainer/ShopItemsListing/Burger/ShopItem/Buy" method="_on_pressed"]
+[connection signal="buy" from="ScrollContainer/ShopItemsListing/Bread/ShopItem/Buy" to="." method="buy_default"]
+[connection signal="pressed" from="ScrollContainer/ShopItemsListing/Bread/ShopItem/Buy" to="ScrollContainer/ShopItemsListing/Bread/ShopItem/Buy" method="_on_pressed"]
+[connection signal="buy" from="ScrollContainer/ShopItemsListing/Butter/ShopItem/Buy" to="." method="buy_default"]
+[connection signal="pressed" from="ScrollContainer/ShopItemsListing/Butter/ShopItem/Buy" to="ScrollContainer/ShopItemsListing/Butter/ShopItem/Buy" method="_on_pressed"]
+[connection signal="buy" from="ScrollContainer/ShopItemsListing/Broccoli/ShopItem/Buy" to="." method="buy_default"]
+[connection signal="pressed" from="ScrollContainer/ShopItemsListing/Broccoli/ShopItem/Buy" to="ScrollContainer/ShopItemsListing/Broccoli/ShopItem/Buy" method="_on_pressed"]
+
+[editable path="ScrollContainer/ShopItemsListing/ProblemWarning"]
+[editable path="CG/CharSprite"]

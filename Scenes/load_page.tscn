@@ -1,0 +1,406 @@
+[gd_scene load_steps=17 format=3 uid="uid://d34fkcgdwojqu"]
+
+[ext_resource type="Texture2D" uid="uid://b084uiokbdlxt" path="res://UI/Backgrounds/LoadMenu.png" id="1_7l5bv"]
+[ext_resource type="Script" path="res://Scripts/load_page.gd" id="1_mt4fq"]
+[ext_resource type="Texture2D" uid="uid://bxqjddbnvkfma" path="res://UI/PageNumberPlate.png" id="2_qxdsd"]
+[ext_resource type="Texture2D" uid="uid://blujhoimperwr" path="res://UI/SaveSlot.png" id="3_cy1c7"]
+[ext_resource type="Texture2D" uid="uid://dqrli7dxu75j3" path="res://UI/SaveSlotHover.png" id="4_2mfex"]
+[ext_resource type="Texture2D" uid="uid://cfitfhp8qb5ut" path="res://UI/ExitButton.png" id="5_tp3i5"]
+[ext_resource type="Texture2D" uid="uid://bbjaqmsiww8q8" path="res://UI/ExitButtonHover.png" id="6_cp0d0"]
+[ext_resource type="FontFile" uid="uid://617io3wrmuth" path="res://Fonts/UDDIGIKYOKASHON-B.TTC" id="6_vprbn"]
+[ext_resource type="Texture2D" uid="uid://b282tvrpyj2ov" path="res://UI/TitleButton.png" id="7_kp117"]
+[ext_resource type="Texture2D" uid="uid://ckdur2cxgyc4v" path="res://UI/TitleButtonHover.png" id="8_io7yl"]
+[ext_resource type="Texture2D" uid="uid://dhhb0jrifmycj" path="res://UI/BackButton.png" id="9_45kps"]
+[ext_resource type="Texture2D" uid="uid://rkp3v6ia43cg" path="res://UI/BackButtonHover.png" id="10_vd75n"]
+[ext_resource type="Texture2D" uid="uid://b61qmvu7021nx" path="res://UI/NextPageButton.png" id="11_tm6ec"]
+[ext_resource type="Texture2D" uid="uid://bfdf8kupkrixq" path="res://UI/NextPageButtonHover.png" id="12_11c64"]
+[ext_resource type="Texture2D" uid="uid://c5d730rjcdgko" path="res://UI/PreviousPageButton.png" id="13_dmd82"]
+[ext_resource type="Texture2D" uid="uid://b6u4oic237c7j" path="res://UI/PreviousPageButtonHover.png" id="14_lvxhq"]
+
+[node name="LoadPage" type="CanvasLayer"]
+script = ExtResource("1_mt4fq")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_7l5bv")
+centered = false
+
+[node name="PageCounter" type="Sprite2D" parent="."]
+position = Vector2(960, 114)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_qxdsd")
+
+[node name="Slot1" type="TextureButton" parent="."]
+offset_left = 100.0
+offset_top = 250.0
+offset_right = 400.0
+offset_bottom = 350.0
+scale = Vector2(1.8, 1.8)
+texture_normal = ExtResource("3_cy1c7")
+texture_hover = ExtResource("4_2mfex")
+
+[node name="Thumb" type="Sprite2D" parent="Slot1"]
+position = Vector2(35.5556, 12.2222)
+scale = Vector2(0.0743634, 0.0704733)
+centered = false
+
+[node name="Date" type="Label" parent="Slot1"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 16.6667
+offset_right = 278.222
+offset_bottom = 43.6667
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Time" type="Label" parent="Slot1"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 36.1111
+offset_right = 278.222
+offset_bottom = 63.1111
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Slot2" type="TextureButton" parent="."]
+offset_left = 100.0
+offset_top = 450.0
+offset_right = 400.0
+offset_bottom = 550.0
+scale = Vector2(1.8, 1.8)
+texture_normal = ExtResource("3_cy1c7")
+texture_hover = ExtResource("4_2mfex")
+
+[node name="Thumb" type="Sprite2D" parent="Slot2"]
+position = Vector2(35.5556, 12.2222)
+scale = Vector2(0.0743634, 0.0704733)
+centered = false
+
+[node name="Date" type="Label" parent="Slot2"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 16.6667
+offset_right = 278.222
+offset_bottom = 43.6667
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Time" type="Label" parent="Slot2"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 36.1111
+offset_right = 278.222
+offset_bottom = 63.1111
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Slot3" type="TextureButton" parent="."]
+offset_left = 100.0
+offset_top = 650.0
+offset_right = 400.0
+offset_bottom = 750.0
+scale = Vector2(1.8, 1.8)
+texture_normal = ExtResource("3_cy1c7")
+texture_hover = ExtResource("4_2mfex")
+
+[node name="Thumb" type="Sprite2D" parent="Slot3"]
+position = Vector2(35.5556, 12.2222)
+scale = Vector2(0.0743634, 0.0704733)
+centered = false
+
+[node name="Date" type="Label" parent="Slot3"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 16.6667
+offset_right = 278.222
+offset_bottom = 43.6667
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Time" type="Label" parent="Slot3"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 36.1111
+offset_right = 278.222
+offset_bottom = 63.1111
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Slot4" type="TextureButton" parent="."]
+offset_left = 690.0
+offset_top = 250.0
+offset_right = 990.0
+offset_bottom = 350.0
+scale = Vector2(1.8, 1.8)
+texture_normal = ExtResource("3_cy1c7")
+texture_hover = ExtResource("4_2mfex")
+
+[node name="Thumb" type="Sprite2D" parent="Slot4"]
+position = Vector2(35.5556, 12.2222)
+scale = Vector2(0.0743634, 0.0704733)
+centered = false
+
+[node name="Date" type="Label" parent="Slot4"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 16.6667
+offset_right = 278.222
+offset_bottom = 43.6667
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Time" type="Label" parent="Slot4"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 36.1111
+offset_right = 278.222
+offset_bottom = 63.1111
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Slot5" type="TextureButton" parent="."]
+offset_left = 690.0
+offset_top = 450.0
+offset_right = 990.0
+offset_bottom = 550.0
+scale = Vector2(1.8, 1.8)
+texture_normal = ExtResource("3_cy1c7")
+texture_hover = ExtResource("4_2mfex")
+
+[node name="Thumb" type="Sprite2D" parent="Slot5"]
+position = Vector2(35.5556, 12.2222)
+scale = Vector2(0.0743634, 0.0704733)
+centered = false
+
+[node name="Date" type="Label" parent="Slot5"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 16.6667
+offset_right = 278.222
+offset_bottom = 43.6667
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Time" type="Label" parent="Slot5"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 36.1111
+offset_right = 278.222
+offset_bottom = 63.1111
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Slot6" type="TextureButton" parent="."]
+offset_left = 690.0
+offset_top = 650.0
+offset_right = 990.0
+offset_bottom = 750.0
+scale = Vector2(1.8, 1.8)
+texture_normal = ExtResource("3_cy1c7")
+texture_hover = ExtResource("4_2mfex")
+
+[node name="Thumb" type="Sprite2D" parent="Slot6"]
+position = Vector2(35.5556, 12.2222)
+scale = Vector2(0.0743634, 0.0704733)
+centered = false
+
+[node name="Date" type="Label" parent="Slot6"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 16.6667
+offset_right = 278.222
+offset_bottom = 43.6667
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Time" type="Label" parent="Slot6"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 36.1111
+offset_right = 278.222
+offset_bottom = 63.1111
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Slot7" type="TextureButton" parent="."]
+offset_left = 1280.0
+offset_top = 250.0
+offset_right = 1580.0
+offset_bottom = 350.0
+scale = Vector2(1.8, 1.8)
+texture_normal = ExtResource("3_cy1c7")
+texture_hover = ExtResource("4_2mfex")
+
+[node name="Thumb" type="Sprite2D" parent="Slot7"]
+position = Vector2(35.5556, 12.2222)
+scale = Vector2(0.0743634, 0.0704733)
+centered = false
+
+[node name="Date" type="Label" parent="Slot7"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 16.6667
+offset_right = 278.222
+offset_bottom = 43.6667
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Time" type="Label" parent="Slot7"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 36.1111
+offset_right = 278.222
+offset_bottom = 63.1111
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Slot8" type="TextureButton" parent="."]
+offset_left = 1280.0
+offset_top = 450.0
+offset_right = 1580.0
+offset_bottom = 550.0
+scale = Vector2(1.8, 1.8)
+texture_normal = ExtResource("3_cy1c7")
+texture_hover = ExtResource("4_2mfex")
+
+[node name="Thumb" type="Sprite2D" parent="Slot8"]
+position = Vector2(35.5556, 12.2222)
+scale = Vector2(0.0743634, 0.0704733)
+centered = false
+
+[node name="Date" type="Label" parent="Slot8"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 16.6667
+offset_right = 278.222
+offset_bottom = 43.6667
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Time" type="Label" parent="Slot8"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 36.1111
+offset_right = 278.222
+offset_bottom = 63.1111
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Slot9" type="TextureButton" parent="."]
+offset_left = 1280.0
+offset_top = 650.0
+offset_right = 1580.0
+offset_bottom = 750.0
+scale = Vector2(1.8, 1.8)
+texture_normal = ExtResource("3_cy1c7")
+texture_hover = ExtResource("4_2mfex")
+
+[node name="Thumb" type="Sprite2D" parent="Slot9"]
+position = Vector2(35.5556, 12.2222)
+scale = Vector2(0.0743634, 0.0704733)
+centered = false
+
+[node name="Date" type="Label" parent="Slot9"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 16.6667
+offset_right = 278.222
+offset_bottom = 43.6667
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Time" type="Label" parent="Slot9"]
+layout_mode = 0
+offset_left = 192.222
+offset_top = 36.1111
+offset_right = 278.222
+offset_bottom = 63.1111
+theme_override_fonts/font = ExtResource("6_vprbn")
+theme_override_font_sizes/font_size = 16
+
+[node name="Exit" type="TextureButton" parent="."]
+offset_left = 1684.0
+offset_top = 872.0
+offset_right = 1934.0
+offset_bottom = 1122.0
+scale = Vector2(0.75, 0.75)
+focus_mode = 0
+texture_normal = ExtResource("5_tp3i5")
+texture_hover = ExtResource("6_cp0d0")
+
+[node name="Title" type="TextureButton" parent="."]
+offset_left = 1393.0
+offset_top = 868.0
+offset_right = 1643.0
+offset_bottom = 1118.0
+scale = Vector2(0.75, 0.75)
+focus_mode = 0
+texture_normal = ExtResource("7_kp117")
+texture_hover = ExtResource("8_io7yl")
+
+[node name="Back" type="TextureButton" parent="."]
+offset_left = 89.0
+offset_top = 858.0
+offset_right = 339.0
+offset_bottom = 1108.0
+scale = Vector2(0.75, 0.75)
+focus_mode = 0
+texture_normal = ExtResource("9_45kps")
+texture_hover = ExtResource("10_vd75n")
+
+[node name="PageNumber" type="Label" parent="."]
+offset_left = 895.0
+offset_top = 49.0
+offset_right = 961.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 86
+text = "1"
+
+[node name="9" type="Label" parent="."]
+offset_left = 974.0
+offset_top = 93.0
+offset_right = 1040.0
+offset_bottom = 193.0
+theme_override_font_sizes/font_size = 86
+text = "9
+"
+
+[node name="10" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 59.0
+offset_right = 263.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 86
+text = "Load"
+
+[node name="NextPage" type="TextureButton" parent="."]
+offset_left = 1085.0
+offset_top = 41.0
+offset_right = 1725.0
+offset_bottom = 521.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("11_tm6ec")
+texture_hover = ExtResource("12_11c64")
+
+[node name="PreviousPage" type="TextureButton" parent="."]
+offset_left = 640.0
+offset_top = 41.0
+offset_right = 1286.0
+offset_bottom = 521.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("13_dmd82")
+texture_hover = ExtResource("14_lvxhq")
+
+[connection signal="pressed" from="Slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="Slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="Slot3" to="." method="_on_slot_3_pressed"]
+[connection signal="pressed" from="Slot4" to="." method="_on_slot_4_pressed"]
+[connection signal="pressed" from="Slot5" to="." method="_on_slot_5_pressed"]
+[connection signal="pressed" from="Slot6" to="." method="_on_slot_6_pressed"]
+[connection signal="pressed" from="Slot7" to="." method="_on_slot_7_pressed"]
+[connection signal="pressed" from="Slot8" to="." method="_on_slot_8_pressed"]
+[connection signal="pressed" from="Slot9" to="." method="_on_slot_9_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Title" to="." method="_on_title_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="NextPage" to="." method="_on_next_page_pressed"]
+[connection signal="pressed" from="PreviousPage" to="." method="_on_previous_page_pressed"]

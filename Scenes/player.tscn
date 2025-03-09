@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://blohuabtgdafr"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ffboj"]
+[ext_resource type="AudioStream" uid="uid://c1e2cuactqmyx" path="res://Sounds/walking.ogg" id="2_8jyok"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y6fap"]
+radius = 0.3
+height = 1.45
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ffboj")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+shape = SubResource("CapsuleShape3D_y6fap")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+
+[node name="Camera" type="Camera3D" parent="Head"]
+current = true
+fov = 94.0
+
+[node name="SoundFootsteps" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_8jyok")
+volume_db = -5.0
+autoplay = true

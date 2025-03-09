@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ykpb8hqlvwdo"]
+
+[ext_resource type="Texture2D" uid="uid://ckgyj0pdtjem0" path="res://Sprites/Backgrounds/windows-xp.jpg" id="1_wtnym"]
+[ext_resource type="Script" path="res://Scripts/Sprite2D.gd" id="2_nfvl0"]
+
+[node name="PC_Screen" type="Node2D"]
+
+[node name="Wallpaper" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Wallpaper"]
+texture = ExtResource("1_wtnym")
+centered = false
+script = ExtResource("2_nfvl0")

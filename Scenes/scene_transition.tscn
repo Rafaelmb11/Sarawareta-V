@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw2762idviakc"]
+
+[ext_resource type="Script" path="res://Scripts/scene_transition.gd" id="1_5hra4"]
+[ext_resource type="Texture2D" uid="uid://ckgyj0pdtjem0" path="res://Sprites/Backgrounds/windows-xp.jpg" id="2_gb2qh"]
+[ext_resource type="Texture2D" uid="uid://btubqi2etaxtk" path="res://Sprites/Backgrounds/black.jpg" id="2_tqq5v"]
+
+[node name="SceneTransition" type="Node2D"]
+top_level = true
+script = ExtResource("1_5hra4")
+
+[node name="Prev" type="Sprite2D" parent="."]
+texture = ExtResource("2_gb2qh")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0)
+texture = ExtResource("2_tqq5v")
+centered = false

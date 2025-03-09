@@ -1,0 +1,281 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy3o5dp4xprps"]
+
+[ext_resource type="Texture2D" uid="uid://f6ce6tlds8c7" path="res://UI/InventorySquare.png" id="1_0g4c8"]
+[ext_resource type="Texture2D" uid="uid://bog3o585yiycv" path="res://Icons/180x180/Butter.png" id="2_fhjdh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1i60k"]
+size = Vector2(174, 176)
+
+[node name="Inventory" type="Node2D"]
+
+[node name="Slots" type="GridContainer" parent="."]
+offset_left = 588.0
+offset_top = 160.0
+offset_right = 588.0
+offset_bottom = 160.0
+theme_override_constants/h_separation = 186
+theme_override_constants/v_separation = 186
+columns = 4
+
+[node name="Slot1" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot1"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot1/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot1/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot2" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot2"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot2/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot2/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot3" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot3"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot3/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot3/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot4" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot4"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot4/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot4/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot5" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot5"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot5/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot5/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot6" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot6"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot6/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot6/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot7" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot7"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot7/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot7/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot8" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot8"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot8/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot8/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot9" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot9"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot9/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot9/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot10" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot10"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot10/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot10/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot11" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot11"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot11/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot11/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot12" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot12"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot12/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot12/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot13" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot13"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot13/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot13/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot14" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot14"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot14/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot14/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot15" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot15"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot15/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot15/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="Slot16" type="Control" parent="Slots"]
+layout_mode = 2
+
+[node name="Body" type="RigidBody2D" parent="Slots/Slot16"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slots/Slot16/Body"]
+position = Vector2(90, 90)
+shape = SubResource("RectangleShape2D_1i60k")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="TextureRect" type="TextureRect" parent="Slots/Slot16/Body"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_0g4c8")
+
+[node name="ItemHolder1" type="Node2D" parent="." groups=["item_holder"]]
+
+[node name="TextureButton" type="TextureButton" parent="ItemHolder1"]
+offset_right = 180.0
+offset_bottom = 180.0
+texture_normal = ExtResource("2_fhjdh")

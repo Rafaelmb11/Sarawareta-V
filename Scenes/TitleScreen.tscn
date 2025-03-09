@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3kifcj6xyyse"]
+
+[ext_resource type="Texture2D" uid="uid://b3jpf0p0t6oye" path="res://UI/new_game.png" id="1_aea4p"]
+[ext_resource type="Script" path="res://Scripts/TitleScreen.gd" id="1_rt8do"]
+[ext_resource type="PackedScene" uid="uid://d34fkcgdwojqu" path="res://Scenes/load_page.tscn" id="2_23p3v"]
+[ext_resource type="Texture2D" uid="uid://bdf8je7cas66y" path="res://UI/Backgrounds/Basement.png" id="2_qmh5j"]
+[ext_resource type="PackedScene" uid="uid://qigbdec2kbaq" path="res://Scenes/config.tscn" id="3_hjwuh"]
+[ext_resource type="Texture2D" uid="uid://dw253mxorqhad" path="res://UI/load_game.png" id="3_m2km7"]
+[ext_resource type="Texture2D" uid="uid://br6c5p3mexbsm" path="res://UI/config.png" id="4_yaphq"]
+[ext_resource type="Texture2D" uid="uid://d0guvehoxeslk" path="res://UI/quit_game.png" id="5_8naoa"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rt8do")
+
+[node name="LoadPage" parent="." instance=ExtResource("2_23p3v")]
+visible = false
+
+[node name="Config" parent="." instance=ExtResource("3_hjwuh")]
+process_mode = 3
+visible = false
+
+[node name="MosaicCensor" parent="Config" index="11"]
+visible = false
+
+[node name="Label" parent="Config/Textbox/TextboxContainer/MarginContainer/HBoxContainer" index="0"]
+text = "\"This is some sample text for config evaluation...\""
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_qmh5j")
+centered = false
+region_rect = Rect2(100, 100, 100, 100)
+
+[node name="New_Game" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 340.0
+offset_bottom = 276.0
+texture_normal = ExtResource("1_aea4p")
+
+[node name="Load_Game" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 400.0
+offset_right = 340.0
+offset_bottom = 476.0
+texture_normal = ExtResource("3_m2km7")
+
+[node name="Config_Game" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 600.0
+offset_right = 340.0
+offset_bottom = 676.0
+texture_normal = ExtResource("4_yaphq")
+
+[node name="Quit_Game" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 800.0
+offset_right = 340.0
+offset_bottom = 876.0
+texture_normal = ExtResource("5_8naoa")
+
+[connection signal="pressed" from="New_Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Load_Game" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="Config_Game" to="." method="_on_config_game_pressed"]
+
+[editable path="Config"]
