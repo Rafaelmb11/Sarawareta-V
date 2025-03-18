@@ -1,2 +1,2 @@
 # Sarawareta-V
-Profane dark humour adult game full of triggering political shit.
+Edgy dark humour adult game full of triggering political shit.
